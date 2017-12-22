@@ -1,0 +1,14 @@
+{
+  "name": "prime-tables",
+  "version": "0.0.1",
+  "description": "Generates a mulitplication table of N primes",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha **/*.js --reporter spec"
+  },
+  "author": "Stefanie Wehrle",
+  "dependencies": {
+    "chai": "4.1.x",
+    "mocha": "4.0.x"
+  }
+}
