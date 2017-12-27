@@ -4,35 +4,53 @@ const _ = require('lodash');
 const Utils = require('../utils/utils');
 
 /**
- * Generates the primes up to limit n.
+ * Generates a list of the first n primes.
  * Implementation is based on the Sieve of Eratosthenes, see:
  * https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
- * @param n the limit
- * @return list of all primes smaller than n
+ * @param n the amount of primes to generate
+ * @return list of the first n primes
  */
- //TODO currently generates primes up to limit n, but
- // needs to generate the first n primes
 function generate(n) {
   let numbers = {};
-  let limit = getUpperBounds(n);
+  let limit;
+  if (n <= 5) {
+    limit = 12;
+  } else {
+    limit = getUpperBounds(n);
+  }
   for (let i = 2; i < limit; i++) {
     numbers[i] = true;
   }
 
+  // since the used upper bound is quite optimistic,
+  // this generates way too many primes
+  // --> could be improved to stop once we have our n primes
   for (let i = 2; i < Math.sqrt(limit); i++) {
     if (numbers[i]) {
-      for (let j = i ^ 2; j < n; j += i) {
+      for (let j = Math.pow(i, 2); j < limit; j += i) {
         numbers[j] = false;
       }
     }
   }
-  let primeIndexes =  _.pickBy(numbers, Utils.isTruthy);
-  return _.keys(primeIndexes);
+
+  //keeps only keys (aka numbers) = true, meaning they are primes
+  let primeIndexes = _.pickBy(numbers, Utils.isTruthy);
+  let sublist = _.slice(_.keys(primeIndexes), 0, n);
+  return _.map(sublist, (val) => {
+    return parseInt(val);
+  });
 }
 
-function getUpperBounds(n){
+/**
+ * Gets the approximation for an upper bound for the nth prime,
+ * for n >= 6
+ * Based on https://en.wikipedia.org/wiki/Prime_number_theorem#Approximations_for_the_nth_prime_number
+ */
+function getUpperBounds(n) {
+  return Math.ceil(n * Math.log(n) + n * Math.log(Math.log(n)));
 }
 
 module.exports = {
-  generate, getUpperBounds
+  generate,
+  getUpperBounds
 }

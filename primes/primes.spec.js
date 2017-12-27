@@ -13,6 +13,10 @@ describe('Primes module', () => {
       expect(Primes.generate(3)).to.eql([2, 3, 5]);
     });
 
+    it('generates the first 5 primes', () => {
+      expect(Primes.generate(5)).to.eql([2, 3, 5, 7, 11]);
+    });
+
     it('generates the first 10 primes', () => {
       expect(Primes.generate(10)).to.eql([
         2,
