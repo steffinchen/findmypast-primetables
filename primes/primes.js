@@ -14,11 +14,12 @@ const Utils = require('../utils/utils');
  // needs to generate the first n primes
 function generate(n) {
   let numbers = {};
-  for (let i = 2; i < n; i++) {
+  let limit = getUpperBounds(n);
+  for (let i = 2; i < limit; i++) {
     numbers[i] = true;
   }
 
-  for (let i = 2; i < Math.sqrt(n); i++) {
+  for (let i = 2; i < Math.sqrt(limit); i++) {
     if (numbers[i]) {
       for (let j = i ^ 2; j < n; j += i) {
         numbers[j] = false;
@@ -29,6 +30,9 @@ function generate(n) {
   return _.keys(primeIndexes);
 }
 
+function getUpperBounds(n){
+}
+
 module.exports = {
-  generate
+  generate, getUpperBounds
 }

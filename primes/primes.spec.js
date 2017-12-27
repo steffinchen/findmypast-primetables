@@ -48,4 +48,12 @@ describe('Primes module', () => {
       expect(elapsed).to.be.below(2000);
     });
   });
+
+  describe('upper bounds', () =>{
+    it('calculates upper bound for nth prime', () => {
+      expect(Primes.getUpperBounds(20000)).to.equal(243928);
+      expect(Primes.getUpperBounds(30000)).to.equal(379259);
+    });
+
+  });
 })
