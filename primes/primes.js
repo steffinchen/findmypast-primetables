@@ -25,6 +25,9 @@ function generate(n) {
   // since the used upper bound is quite optimistic,
   // this generates way too many primes
   // --> could be improved to stop once we have our n primes
+  // however, if we have an efficient way to determine whether we
+  // have generated enough primes, we wouldn't need the upper 
+  // bound at all
   for (let i = 2; i < Math.sqrt(limit); i++) {
     if (numbers[i]) {
       for (let j = Math.pow(i, 2); j < limit; j += i) {
@@ -40,6 +43,8 @@ function generate(n) {
     return parseInt(val);
   });
 }
+
+
 
 /**
  * Gets the approximation for an upper bound for the nth prime,
