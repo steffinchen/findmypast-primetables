@@ -1,9 +1,9 @@
 'use strict'
 
-const Primes = require('./Primes')
+const Primes = require('./primes')
 const expect = require('chai').expect
 
-describe('Primes moduel', () => {
+describe('Primes module', () => {
   describe('generate primes', () => {
     it('should export a function', () => {
       expect(Primes.generate).to.be.a('function')
@@ -47,5 +47,5 @@ describe('Primes moduel', () => {
       var elapsed = process.hrtime(start)[1] / 1000000; // divide by a million to get nano to milli
       expect(elapsed).to.be.below(2000);
     });
-  })
+  });
 })

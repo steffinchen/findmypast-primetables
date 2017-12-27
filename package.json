@@ -9,6 +9,7 @@
   "author": "Stefanie Wehrle",
   "dependencies": {
     "chai": "4.1.x",
+    "lodash": "^4.17.4",
     "mocha": "4.0.x"
   }
 }
