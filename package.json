@@ -4,13 +4,22 @@
   "description": "Generates a mulitplication table of N primes",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha **/*.js --reporter spec"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
   "author": "Stefanie Wehrle",
   "dependencies": {
     "chai": "4.1.x",
     "chai-spies": "^0.7.1",
     "lodash": "^4.17.4",
-    "mocha": "4.0.x"
+    "mocha": "4.0.x",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "react-scripts": "^1.0.17",
+    "webpack": "^3.10.0"
   }
 }
