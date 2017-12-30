@@ -27,4 +27,9 @@ describe('Multiplication Table', () => {
     const wrapper = shallow(<MultiplicationTableUI n="3"/>);
     expect(wrapper.find('table > tbody > tr').first().html()).to.equal('<tr><th>2</th><td>4</td><td>6</td><td>10</td></tr>');
   });
+
+  it('only displays a table if input is set', () => {
+    const wrapper = shallow(<MultiplicationTableUI />);
+    expect(wrapper.find('table')).to.have.length(0);
+  });
 });
