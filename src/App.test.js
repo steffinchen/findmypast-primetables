@@ -4,6 +4,7 @@ import App from './App';
 import {shallow} from 'enzyme';
 import {expect} from 'chai';
 import MultiplicationTableUI from './MultiplicationTableUI';
+import UserInput from './UserInput';
 
 describe('Prime-Tables frontend', () => {
   it('renders without crashing', () => {
@@ -16,9 +17,9 @@ describe('Prime-Tables frontend', () => {
     expect(wrapper.find('h1').text()).to.equal('Findmypast Prime Tables');
   });
 
-  it('has an input field', () => {
+  xit('has an input field', () => {
     const wrapper = shallow(<App/>);
-    expect(wrapper.find('input')).to.have.length(1);
+    expect(wrapper.find(UserInput)).to.have.length(1);
   });
 
   it('displays the multiplication table', () => {
@@ -26,14 +27,14 @@ describe('Prime-Tables frontend', () => {
     expect(wrapper.find(MultiplicationTableUI)).to.have.length(1);
   });
 
-  it('has a state of the user input', () => {
+  it('passes the user input to multiplication table', () => {
     const wrapper = shallow(<App/>);
     const input = wrapper.find('input');
     const okButton = wrapper.find('button');
 
     input.simulate('change', { target: { value: '3' } })
     okButton.simulate('click');
-    expect(wrapper.state().n).to.equal(3);
+    expect(wrapper.find(MultiplicationTableUI).prop('n')).to.equal(3);
 
   });
 });
