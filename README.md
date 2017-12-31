@@ -11,12 +11,14 @@ the first N prime numbers as row and column headers.
 
 How to run
 ----------
+Before running it for the first time, install all the dependencies:
 
-In the root folder in a command line, execute
+    npm install
+
+Start the app in development mode. Open http://localhost:3000 in a browser to view it:
 
     npm start
 
-This will start the app in development mode. Open http://localhost:3000 to view it in the browser.
 
 Run tests:
 
