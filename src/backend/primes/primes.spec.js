@@ -1,13 +1,13 @@
-'use strict'
+'use strict';
 
-const Primes = require('./primes')
-const expect = require('chai').expect
+const Primes = require('./primes');
+const expect = require('chai').expect;
 
 describe('Primes module', () => {
   describe('generate primes', () => {
     it('should export a function', () => {
-      expect(Primes.generate).to.be.a('function')
-    })
+      expect(Primes.generate).to.be.a('function');
+    });
 
     it('generates the first 3 primes', () => {
       expect(Primes.generate(3)).to.eql([2, 3, 5]);
@@ -60,4 +60,4 @@ describe('Primes module', () => {
     });
 
   });
-})
+});

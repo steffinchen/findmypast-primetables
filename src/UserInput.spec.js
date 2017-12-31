@@ -11,10 +11,10 @@ describe('User input component', () => {
   });
 
   it('has a state of the user input', () => {
-    const wrapper = shallow(<UserInput onClick={() => {clicked = true;}}/>);
+    const wrapper = shallow(<UserInput/>);
     const input = wrapper.find('input');
 
-    input.simulate('change', { target: { value: '3' } })
+    input.simulate('change', { target: { value: '3' } });
     expect(wrapper.state().value).to.equal('3');
 
   });

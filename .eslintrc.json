@@ -1,0 +1,40 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "parserOptions": {
+      "sourceType": "module",
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true,
+            "jsx": true
+        }
+    },
+    "plugins": [
+        "react",
+        "json"
+    ],
+    "rules": {
+        "indent": [
+            "warn",
+            2
+        ],
+        "quotes": [
+            "warn",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ]
+    },
+    "globals": {
+        "describe": false,
+        "it": false
+    }
+}

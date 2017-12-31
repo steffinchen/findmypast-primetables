@@ -32,8 +32,8 @@ describe('Prime-Tables frontend', () => {
     const input = wrapper.find('input');
     const form = wrapper.find('form');
 
-    input.simulate('change', { target: { value: '3' } })
-    form.simulate('submit', { preventDefault () {} })
+    input.simulate('change', { target: { value: '3' } });
+    form.simulate('submit', { preventDefault () {} });
     expect(wrapper.find(MultiplicationTableUI).prop('n')).to.equal(3);
 
   });

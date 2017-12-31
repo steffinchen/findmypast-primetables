@@ -1,7 +1,8 @@
 import React from 'react';
 import range from 'lodash/range';
-import PrimeTable from './backend/prime-table/prime-table'
+import PrimeTable from './backend/prime-table/prime-table';
 import isUndefined from 'lodash/isUndefined';
+import PropTypes from 'prop-types';
 
 class MultiplicationTableUI extends React.Component {
   render() {
@@ -33,5 +34,9 @@ class MultiplicationTableUI extends React.Component {
     }
   }
 }
+
+MultiplicationTableUI.propTypes = {
+  n: PropTypes.number
+};
 
 export default MultiplicationTableUI;

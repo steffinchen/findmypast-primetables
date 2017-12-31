@@ -1,11 +1,11 @@
-'use strict'
+'use strict';
 
-const Utils = require('./utils')
-const expect = require('chai').expect
+const Utils = require('./utils');
+const expect = require('chai').expect;
 
 describe('Utils module', () => {
   it('should export a truthy function', () => {
-    expect(Utils.isTruthy).to.be.a('function')
+    expect(Utils.isTruthy).to.be.a('function');
   });
 
   it('returns true for all truthy values', () =>{

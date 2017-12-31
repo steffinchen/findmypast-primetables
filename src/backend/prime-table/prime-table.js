@@ -1,7 +1,5 @@
-'use strict'
-
 const MultiTable = require('../multiplication-table/multi-table');
-const Prime = require('../primes/primes')
+const Prime = require('../primes/primes');
 
 function generatePrimeTable(n){
   let primes = Prime.generate(n);
@@ -10,4 +8,4 @@ function generatePrimeTable(n){
 
 module.exports = {
   generatePrimeTable
-}
+};

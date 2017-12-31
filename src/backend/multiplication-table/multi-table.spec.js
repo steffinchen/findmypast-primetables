@@ -1,7 +1,7 @@
-'use strict'
+'use strict';
 
-const MultiTable = require('./multi-table')
-const expect = require('chai').expect
+const MultiTable = require('./multi-table');
+const expect = require('chai').expect;
 const _ = require('lodash');
 
 describe('Multiplication-table module', () => {

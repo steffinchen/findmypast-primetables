@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class UserInput extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -17,11 +17,11 @@ class UserInput extends React.Component {
   render() {
     return <div >
       <form onSubmit={(e) => {
-          e.preventDefault();
-          this.props.onClick(this.state.value);
-        }}>
+        e.preventDefault();
+        this.props.onClick(this.state.value);
+      }}>
         <div className="form-group">
-          <label htmlFor="input">Enter a whole number > 0:
+          <label htmlFor="input">Enter a whole number &gt; 0:
           </label>
           <input type="text" className="form-control" value={this.state.value} onChange={this.handleChange} id="input"></input>
         </div>
@@ -30,5 +30,9 @@ class UserInput extends React.Component {
     </div>;
   }
 }
+
+UserInput.propTypes = {
+  onClick: PropTypes.func
+};
 
 export default UserInput;

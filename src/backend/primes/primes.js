@@ -1,5 +1,3 @@
-'use strict'
-
 const _ = require('lodash');
 const Utils = require('../utils/utils');
 
@@ -26,7 +24,7 @@ function generate(n) {
   // this generates way too many primes
   // --> could be improved to stop once we have our n primes
   // however, if we have an efficient way to determine whether we
-  // have generated enough primes, we wouldn't need the upper 
+  // have generated enough primes, we wouldn't need the upper
   // bound at all
   for (let i = 2; i < Math.sqrt(limit); i++) {
     if (numbers[i]) {
@@ -40,7 +38,7 @@ function generate(n) {
   let primeIndexes = _.pickBy(numbers, Utils.isTruthy);
   let sublist = _.slice(_.keys(primeIndexes), 0, n);
   return _.map(sublist, (val) => {
-    return parseInt(val);
+    return parseInt(val, 10);
   });
 }
 
@@ -58,4 +56,4 @@ function getUpperBounds(n) {
 module.exports = {
   generate,
   getUpperBounds
-}
+};

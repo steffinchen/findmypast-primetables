@@ -1,5 +1,3 @@
-'use strict'
-
 const _ = require('lodash');
 
 /**
@@ -27,4 +25,4 @@ function generate(header) {
 
 module.exports = {
   generate
-}
+};

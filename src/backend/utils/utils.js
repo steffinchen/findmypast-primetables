@@ -1,5 +1,3 @@
-'use strict'
-
 /**
  * Returns true for all truthy values,
  * false otherwise.
@@ -12,4 +10,4 @@ function isTruthy(val){
 
 module.exports = {
   isTruthy
-}
+};
