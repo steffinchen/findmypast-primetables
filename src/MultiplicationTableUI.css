@@ -1,0 +1,24 @@
+/* Highlight table row and column on hover, as described here:
+https://css-tricks.com/simple-css-row-column-highlighting/ */
+
+table {
+  overflow: hidden;
+}
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+td, th {
+  position: relative;
+}
+td:hover::after,
+th:hover::after {
+  content: "";
+  position: absolute;
+  background-color: #f5f5f5;
+  left: 0;
+  top: -5000px;
+  height: 10000px;
+  width: 100%;
+  z-index: -5;
+}

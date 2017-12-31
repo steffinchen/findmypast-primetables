@@ -3,6 +3,7 @@ import range from 'lodash/range';
 import PrimeTable from './backend/prime-table/prime-table';
 import isUndefined from 'lodash/isUndefined';
 import PropTypes from 'prop-types';
+import './MultiplicationTableUI.css';
 
 class MultiplicationTableUI extends React.Component {
   render() {
