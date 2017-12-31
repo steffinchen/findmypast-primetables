@@ -11,13 +11,23 @@ describe('User input component', () => {
   });
 
   it('has a state of the user input', () => {
-    const wrapper = shallow(<UserInput/>);
+    const wrapper = shallow(<UserInput onClick={() => {clicked = true;}}/>);
     const input = wrapper.find('input');
-    const okButton = wrapper.find('button');
 
     input.simulate('change', { target: { value: '3' } })
-    okButton.simulate('click');
-    expect(wrapper.state().input).to.equal(3);
+    expect(wrapper.state().value).to.equal('3');
+
+  });
+
+  it('calls a callback when the submit button is clicked', () => {
+    let clicked = false;
+    const wrapper = shallow(<UserInput onClick={() => {clicked = true;}}/>);
+    const form = wrapper.find('form');
+
+    // a simulated click event with enzyme does not trigger form submission
+    // https://github.com/airbnb/enzyme/issues/308
+    form.simulate('submit', { preventDefault () {} });
+    expect(clicked).to.be.true;
 
   });
 });
